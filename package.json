@@ -19,13 +19,13 @@
   "repository": "push2cloud/cf-workflows",
   "homepage": "http://push2.cloud/",
   "devDependencies": {
-    "eslint": "2.8.0"
+    "eslint": "2.11.1"
   },
   "dependencies": {
-    "push2cloud-cf-adapter": "1.0.1",
+    "push2cloud-cf-adapter": "1.0.3",
     "push2cloud-workflow-utils": "1.0.0",
     "debug": "2.2.0",
-    "lodash": "4.11.1",
+    "lodash": "4.13.1",
     "async": "2.0.0-rc.3"
   }
 }
