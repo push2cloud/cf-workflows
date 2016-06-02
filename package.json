@@ -1,6 +1,6 @@
 {
   "name": "push2cloud-cf-workflows",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "some nice utils to use to make own workflows",
   "scripts": {
     "lint": "eslint .",
