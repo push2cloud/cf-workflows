@@ -14,7 +14,7 @@ const combine = WF.combine;
 const packageApp = WF.packageApp;
 
 
-const blueGreen = (deploymentConfig, api, log) =>
+const redeployAllApps = (deploymentConfig, api, log) =>
   waterfall(
     [ init(deploymentConfig, api, log)
     , map(packageApp, 'desired.apps')
@@ -40,5 +40,5 @@ module.exports = function(config, log, cb) {
   }
   , config.target));
 
-  return blueGreen(config, api, log)({}, cb);
+  return redeployAllApps(config, api, log)({}, cb);
 };
