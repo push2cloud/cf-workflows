@@ -1,3 +1,6 @@
+## [v1.0.13](https://github.com/push2cloud/cf-workflows/compare/v1.0.12...v1.0.13)
+- added ensureRunning
+
 ## [v1.0.12](https://github.com/push2cloud/cf-workflows/compare/v1.0.11...v1.0.12)
 - bump cf-adapter
 
