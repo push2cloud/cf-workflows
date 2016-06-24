@@ -2,6 +2,7 @@
   "name": "push2cloud-cf-workflows",
   "version": "1.1.0",
   "description": "some nice utils to use to make own workflows",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint"

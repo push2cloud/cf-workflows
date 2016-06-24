@@ -1,8 +1,8 @@
 const _ = require('lodash');
 const cf = require('push2cloud-cf-adapter');
 const WF = require('push2cloud-workflow-utils');
-const init = require('push2cloud-cf-workflows/init');
-const missing = require('push2cloud-cf-workflows/missing');
+const init = require('./init');
+const missing = require('./missing');
 
 const waterfall = WF.waterfall;
 const map = WF.map;
