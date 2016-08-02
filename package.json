@@ -27,6 +27,6 @@
     "push2cloud-workflow-utils": "1.0.1",
     "debug": "2.2.0",
     "lodash": "4.14.1",
-    "async": "2.0.0-rc.6"
+    "async": "2.0.1"
   }
 }
