@@ -1,4 +1,4 @@
-## [v1.1.5](https://github.com/push2cloud/cf-workflows/compare/v1.1.1...v1.1.5)
+## [v1.1.6](https://github.com/push2cloud/cf-workflows/compare/v1.1.1...v1.1.6)
 - bump cf-adapter
 
 ## [v1.1.1](https://github.com/push2cloud/cf-workflows/compare/v1.1.0...v1.1.1)
