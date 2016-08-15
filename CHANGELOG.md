@@ -1,3 +1,6 @@
+## [v1.2.1](https://github.com/push2cloud/cf-workflows/compare/v1.2.0...v1.2.1)
+- bump cf-adapter
+
 ## [v1.2.0](https://github.com/push2cloud/cf-workflows/compare/v1.1.6...v1.2.0)
 - prepareApps and desiredApps now waits for service to be ready before trying to bind
 
