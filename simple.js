@@ -14,7 +14,7 @@ const diff = WF.diff;
 
 const appsToDeploy = diff('desired.apps', 'current.apps', 'name');
 const routes = diff('desired.routes', 'current.routes', 'hostname');
-const unAssociatedRoutes = diff('desired.routes', 'current.routes', (r) => r.app + r.hostname + r.domain);
+const unAssociatedRoutes = diff('desired.routes', 'current.routes', (r) => r.app + r.hostname + r.domain + r.path);
 const services = diff('desired.services', 'current.services', 'name');
 const serviceBindings = diff('desired.serviceBindings', 'current.apps', (r) => r.app || r.name);
 const envVars = diff('desired.envVars', 'current.apps', 'name');
