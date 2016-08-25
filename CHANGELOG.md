@@ -1,3 +1,6 @@
+## [v1.3.1](https://github.com/push2cloud/cf-workflows/compare/v1.3.0...v1.3.1)
+- use pushApp instead of createApp and uploadApp
+
 ## [v1.3.0](https://github.com/push2cloud/cf-workflows/compare/v1.2.1...v1.3.0)
 - for routes check use path too
 
