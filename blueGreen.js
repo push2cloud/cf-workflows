@@ -23,6 +23,7 @@ const blueGreen = (deploymentConfig, api, log) =>
     , mapLimit(api.pushApp, missing.apps)
     , map(api.setEnv, missing.envVars)
     , map(api.stageApp, missing.apps)
+    , map(api.waitForServiceInstance, missing.services)
     , map(api.bindService, missing.serviceBindings)
     , map(api.startAppAndWaitForInstances, missing.apps)
     , map(api.associateRoute, missing.unAssociatedRoutes)
