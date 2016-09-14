@@ -1,3 +1,6 @@
+## [v1.3.4](https://github.com/push2cloud/cf-workflows/compare/v1.3.3...v1.3.4)
+- bump cf-adapter
+
 ## [v1.3.3](https://github.com/push2cloud/cf-workflows/compare/v1.3.2...v1.3.3)
 - waitForServiceInstance in bluegreen
 
