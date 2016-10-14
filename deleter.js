@@ -11,7 +11,7 @@ const intersection = WF.intersection;
 
 const apps = intersection('desired.apps', 'current.apps', 'name');
 const routes = intersection('desired.routes', 'current.routes', 'hostname');
-const associatedRoutes = intersection('desired.routes', 'current.routes', (r) => r.app + r.hostname + r.domain);
+const associatedRoutes = intersection('desired.routes', 'current.routes', (r) => r.app + r.hostname + r.domain + (r.path || ''));
 const serviceBindings = intersection('desired.serviceBindings', 'current.serviceBindings', (b) => b.app + b.service);
 
 

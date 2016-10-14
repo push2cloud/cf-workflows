@@ -1,3 +1,6 @@
+## [v1.3.6](https://github.com/push2cloud/cf-workflows/compare/v1.3.5...v1.3.6)
+- update some dependencies
+
 ## [v1.3.5](https://github.com/push2cloud/cf-workflows/compare/v1.3.4...v1.3.5)
 - bump cf-adapter
 
