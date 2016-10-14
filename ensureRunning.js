@@ -4,7 +4,7 @@ const map = require('push2cloud-workflow-utils').map;
 
 const stopped = (ctx) => {
   return _fp.filter((a) => {
-    if (a.state === 'STOPPED' || a.state === 'STAGED') {
+    if (a.state === 'STOPPED') {
       return _.some(ctx.desired.apps, { name: a.name });
     }
   });

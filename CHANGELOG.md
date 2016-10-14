@@ -1,4 +1,4 @@
-## [v1.3.7](https://github.com/push2cloud/cf-workflows/compare/v1.3.5...v1.3.7)
+## [v1.3.8](https://github.com/push2cloud/cf-workflows/compare/v1.3.5...v1.3.8)
 - update some dependencies
 
 ## [v1.3.5](https://github.com/push2cloud/cf-workflows/compare/v1.3.4...v1.3.5)
