@@ -1,3 +1,6 @@
+## [v1.3.9](https://github.com/push2cloud/cf-workflows/compare/v1.3.8...v1.3.9)
+- fix blueGreen, update some dependencies
+
 ## [v1.3.8](https://github.com/push2cloud/cf-workflows/compare/v1.3.5...v1.3.8)
 - update some dependencies
 
