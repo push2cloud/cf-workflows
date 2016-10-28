@@ -13,7 +13,6 @@ const mapLimit = WF.mapLimit(4);
 const combine = WF.combine;
 const packageApp = WF.packageApp;
 
-
 const blueGreen = (deploymentConfig, api, log) =>
   waterfall(
     [ init(deploymentConfig, api, log)
@@ -27,7 +26,7 @@ const blueGreen = (deploymentConfig, api, log) =>
     , map(api.bindService, missing.serviceBindings)
     , map(api.startAppAndWaitForInstances, missing.apps)
     , map(api.associateRoute, missing.unAssociatedRoutes)
-    , map(switchRoutes(api), combine('desired.routes', old.associatedRoutes, (r) => (r.unversionedName + r.hostname + r.domain + (r.path || '')))
+    , map(switchRoutes(api), combine('desired.routes', old.associatedRoutes, (r) => (r.unversionedName + r.hostname + r.domain + (r.path || ''))))
     , map(api.stopApp, old.apps)
     , map(api.unbindService, old.serviceBindings)
     , map(api.deleteApp, old.apps)
