@@ -1,3 +1,6 @@
+## [v1.3.10](https://github.com/push2cloud/cf-workflows/compare/v1.3.9...v1.3.10)
+- limit parallel execution of service binding interactions
+
 ## [v1.3.9](https://github.com/push2cloud/cf-workflows/compare/v1.3.8...v1.3.9)
 - fix blueGreen, update some dependencies
 
