@@ -15,7 +15,7 @@ const desiredApps = (api, log, services) =>
     , step(log('package apps'))
     , map(packageApp, 'desired.apps')
     , step(log('create service instances'))
-    , map(api.createServiceInstance, services || 'desired.services')
+    , mapLimit(api.createServiceInstance, services || 'desired.services')
     , step(log('create routes'))
     , map(api.createRoute, 'desired.routes')
     , step(log('push apps'))
@@ -27,7 +27,7 @@ const desiredApps = (api, log, services) =>
     , step(log('wait for services to be ready to bind'))
     , map(api.waitForServiceInstance, services || 'desired.services')
     , step(log('bind services'))
-    , map(api.bindService, 'desired.serviceBindings')
+    , mapLimit(api.bindService, 'desired.serviceBindings')
     , step(log('start apps and wait for instances'))
     , step(log('desired apps prepared'))
     ]
