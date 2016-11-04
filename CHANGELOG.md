@@ -1,3 +1,6 @@
+## [v1.3.11](https://github.com/push2cloud/cf-workflows/compare/v1.3.10...v1.3.11)
+- limit more parallel execution of service binding interactions
+
 ## [v1.3.10](https://github.com/push2cloud/cf-workflows/compare/v1.3.9...v1.3.10)
 - limit parallel execution of service binding interactions
 
