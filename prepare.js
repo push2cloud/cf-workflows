@@ -42,7 +42,7 @@ const prepareApps = (api, log, what, services) =>
     , step(log('package apps'))
     , map(packageApp, what.apps)
     , step(log('create service instances'))
-    , map(api.createServiceInstance, services || what.services)
+    , mapLimit(api.createServiceInstance, services || what.services)
     , step(log('create routes'))
     , map(api.createRoute, what.routes)
     , step(log('push apps'))
@@ -54,7 +54,7 @@ const prepareApps = (api, log, what, services) =>
     , step(log('wait for services to be ready to bind'))
     , map(api.waitForServiceInstance, services || what.services)
     , step(log('bind services'))
-    , map(api.bindService, what.serviceBindings)
+    , mapLimit(api.bindService, what.serviceBindings)
     , step(log('start apps and wait for instances'))
     , step(log('apps prepared'))
     ]
