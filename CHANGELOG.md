@@ -1,3 +1,6 @@
+## [v1.3.12](https://github.com/push2cloud/cf-workflows/compare/v1.3.11...v1.3.12)
+- failsafe deleteApps workflow
+
 ## [v1.3.11](https://github.com/push2cloud/cf-workflows/compare/v1.3.10...v1.3.11)
 - limit more parallel execution of service binding interactions
 

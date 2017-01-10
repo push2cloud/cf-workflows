@@ -31,8 +31,7 @@ const deleter = (deploymentConfig, api, log) =>
 
 module.exports = function(config, log, cb) {
   const connection = _.assign({ username: process.env.CF_USER
-                              , password: process.env.CF_PWD
-                              }
+                              , password: process.env.CF_PWD }
                               , config.target);
   const api = cf(connection);
 
