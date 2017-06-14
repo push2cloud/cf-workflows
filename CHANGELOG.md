@@ -1,3 +1,6 @@
+## [v1.3.16](https://github.com/push2cloud/cf-workflows/compare/v1.3.15...v1.3.16)
+- update some dependencies
+
 ## [v1.3.15](https://github.com/push2cloud/cf-workflows/compare/v1.3.14...v1.3.15)
 - update some dependencies
 
