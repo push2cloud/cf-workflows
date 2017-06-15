@@ -4,6 +4,7 @@ const waterfall = WF.waterfall;
 const step = WF.step;
 const map = WF.map;
 const mapLimit = WF.mapLimit(Math.round(require('os').cpus().length / 2));
+const mapSeries = WF.mapSeries;
 const packageApp = WF.packageApp;
 
 const desiredApps = (api, log, services) =>
@@ -27,7 +28,7 @@ const desiredApps = (api, log, services) =>
     , step(log('wait for services to be ready to bind'))
     , map(api.waitForServiceInstance, services || 'desired.services')
     , step(log('bind services'))
-    , mapLimit(api.bindService, 'desired.serviceBindings')
+    , mapSeries(api.bindService, 'desired.serviceBindings')
     , step(log('start apps and wait for instances'))
     , step(log('desired apps prepared'))
     ]
@@ -54,7 +55,7 @@ const prepareApps = (api, log, what, services) =>
     , step(log('wait for services to be ready to bind'))
     , map(api.waitForServiceInstance, services || what.services)
     , step(log('bind services'))
-    , mapLimit(api.bindService, what.serviceBindings)
+    , mapSeries(api.bindService, what.serviceBindings)
     , step(log('start apps and wait for instances'))
     , step(log('apps prepared'))
     ]

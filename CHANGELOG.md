@@ -1,3 +1,6 @@
+## [v1.3.17](https://github.com/push2cloud/cf-workflows/compare/v1.3.16...v1.3.17)
+- mapSeries for bindServices
+
 ## [v1.3.16](https://github.com/push2cloud/cf-workflows/compare/v1.3.15...v1.3.16)
 - update some dependencies
 
