@@ -1,3 +1,6 @@
+## [v1.3.27](https://github.com/push2cloud/cf-workflows/compare/v1.3.26...v1.3.27)
+- limit async execution of packageApp
+
 ## [v1.3.26](https://github.com/push2cloud/cf-workflows/compare/v1.3.25...v1.3.26)
 - bump cf-adapter
 

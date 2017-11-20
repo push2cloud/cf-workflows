@@ -14,7 +14,7 @@ const desiredApps = (api, log, services) =>
 
     , step(log('start deployment'))
     , step(log('package apps'))
-    , map(packageApp, 'desired.apps')
+    , mapLimit(packageApp, 'desired.apps')
     , step(log('create service instances'))
     , mapLimit(api.createServiceInstance, services || 'desired.services')
     , step(log('create routes'))
