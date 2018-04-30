@@ -23,10 +23,10 @@
     "eslint": "3.19.0"
   },
   "dependencies": {
-    "push2cloud-cf-adapter": "1.6.7",
+    "push2cloud-cf-adapter": "1.7.1",
     "push2cloud-workflow-utils": "1.0.2",
     "debug": "3.1.0",
-    "lodash": "4.17.5",
+    "lodash": "4.17.10",
     "async": "2.6.0"
   }
 }
