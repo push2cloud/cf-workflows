@@ -1,3 +1,6 @@
+## [v1.3.32](https://github.com/push2cloud/cf-workflows/compare/v1.3.31...v1.3.32)
+- fix limit async execution of prepare apps
+
 ## [v1.3.31](https://github.com/push2cloud/cf-workflows/compare/v1.3.30...v1.3.31)
 - limit async execution of prepare apps
 
