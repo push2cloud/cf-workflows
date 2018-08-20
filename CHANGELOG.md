@@ -1,3 +1,6 @@
+## [v1.3.31](https://github.com/push2cloud/cf-workflows/compare/v1.3.30...v1.3.31)
+- limit async execution of prepare apps
+
 ## [v1.3.30](https://github.com/push2cloud/cf-workflows/compare/v1.3.29...v1.3.30)
 - bump cf-adapter
 

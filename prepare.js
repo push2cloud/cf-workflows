@@ -3,7 +3,7 @@ const WF = require('push2cloud-workflow-utils');
 const waterfall = WF.waterfall;
 const step = WF.step;
 const map = WF.map;
-const mapLimit = WF.mapLimit(Math.round(require('os').cpus().length / 2));
+const mapLimit = WF.mapLimit(Math.round(require('os').cpus().length / 4));
 const mapSeries = WF.mapSeries;
 const packageApp = WF.packageApp;
 
