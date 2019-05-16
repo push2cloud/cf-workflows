@@ -12,7 +12,7 @@ const deleter = (api, log) =>
     , step(log('==========='))
     , map(api.disassociateRoute, from('current.routes', _fp.filter((r) => r.app || r.appGuid)))
     , map(api.stopApp, from('current.apps', _fp.filter((a) => a.state !== 'STOPPED')))
-    , map(api.unbindService, from('current.serviceBindings', _fp.filter((a) => a.serviceBindingGuid)))
+    , map(api.unbindService, from('current.serviceBindings', _fp.filter((a) => a.guid)))
     , map(api.deleteApp, 'current.apps')
     , map(api.deleteRoute, 'current.routes')
     , step(log('apps deleted'))
