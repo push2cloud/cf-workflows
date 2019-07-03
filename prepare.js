@@ -29,7 +29,6 @@ const desiredApps = (api, log, services) =>
     , map(api.waitForServiceInstance, services || 'desired.services')
     , step(log('bind services'))
     , mapSeries(api.bindService, 'desired.serviceBindings')
-    , step(log('start apps and wait for instances'))
     , step(log('desired apps prepared'))
     ]
  );
@@ -56,7 +55,6 @@ const prepareApps = (api, log, what, services) =>
     , map(api.waitForServiceInstance, services || what.services)
     , step(log('bind services'))
     , mapSeries(api.bindService, what.serviceBindings)
-    , step(log('start apps and wait for instances'))
     , step(log('apps prepared'))
     ]
  );
