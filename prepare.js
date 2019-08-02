@@ -1,3 +1,4 @@
+const _fp = require('lodash/fp');
 const WF = require('push2cloud-workflow-utils');
 
 const waterfall = WF.waterfall;
@@ -6,8 +7,13 @@ const map = WF.map;
 const mapLimit = WF.mapLimit(Math.round(require('os').cpus().length / 2));
 const mapSeries = WF.mapSeries;
 const packageApp = WF.packageApp;
+const from = WF.from;
 
-const desiredApps = (api, log, services) =>
+const userProvidedServiceType = 'user-provided';
+const services = _fp.filter((service) => service.type !== userProvidedServiceType);
+const userProvidedServices = _fp.filter((service) => service.type === userProvidedServiceType);
+
+const desiredApps = (api, log, allServices) =>
   waterfall(
     [ step(log('prepare desired apps'))
     , step(log('===================='))
@@ -16,7 +22,9 @@ const desiredApps = (api, log, services) =>
     , step(log('package apps'))
     , mapLimit(packageApp, 'desired.apps')
     , step(log('create service instances'))
-    , mapLimit(api.createServiceInstance, services || 'desired.services')
+    , mapLimit(api.createServiceInstance, from(allServices || 'desired.services', services))
+    , step(log('create user provided service instances'))
+    , mapLimit(api.createUserProvidedServiceInstance, from(allServices || 'desired.services', userProvidedServices))
     , step(log('create routes'))
     , map(api.createRoute, 'desired.routes')
     , step(log('push apps'))
@@ -26,7 +34,7 @@ const desiredApps = (api, log, services) =>
     , step(log('stage apps'))
     , map(api.stageApp, 'desired.apps')
     , step(log('wait for services to be ready to bind'))
-    , map(api.waitForServiceInstance, services || 'desired.services')
+    , map(api.waitForServiceInstance, from(allServices || 'desired.services', services))
     , step(log('bind services'))
     , mapSeries(api.bindService, 'desired.serviceBindings')
     , step(log('start apps and wait for instances'))
@@ -34,7 +42,7 @@ const desiredApps = (api, log, services) =>
     ]
  );
 
-const prepareApps = (api, log, what, services) =>
+const prepareApps = (api, log, what, allServices) =>
   waterfall(
     [ step(log('prepare apps'))
     , step(log('===================='))
@@ -42,8 +50,9 @@ const prepareApps = (api, log, what, services) =>
     , step(log('start deployment'))
     , step(log('package apps'))
     , map(packageApp, what.apps)
-    , step(log('create service instances'))
-    , mapLimit(api.createServiceInstance, services || what.services)
+    , mapLimit(api.createServiceInstance, from(allServices || what.services, services))
+    , step(log('create user provided service instances'))
+    , mapLimit(api.createUserProvidedServiceInstance, from(allServices || what.services, userProvidedServices))
     , step(log('create routes'))
     , map(api.createRoute, what.routes)
     , step(log('push apps'))
@@ -53,7 +62,7 @@ const prepareApps = (api, log, what, services) =>
     , step(log('stage apps'))
     , map(api.stageApp, what.apps)
     , step(log('wait for services to be ready to bind'))
-    , map(api.waitForServiceInstance, services || what.services)
+    , map(api.waitForServiceInstance, from(allServices || what.services, services))
     , step(log('bind services'))
     , mapSeries(api.bindService, what.serviceBindings)
     , step(log('start apps and wait for instances'))
