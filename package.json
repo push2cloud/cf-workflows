@@ -26,7 +26,7 @@
     "push2cloud-cf-adapter": "1.7.1",
     "push2cloud-workflow-utils": "1.0.2",
     "debug": "3.1.0",
-    "lodash": "4.17.10",
+    "lodash": "4.17.19",
     "async": "2.6.0"
   }
 }
